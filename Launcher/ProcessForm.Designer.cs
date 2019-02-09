@@ -81,7 +81,9 @@
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lvwProcessList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProcessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "进程列表";
