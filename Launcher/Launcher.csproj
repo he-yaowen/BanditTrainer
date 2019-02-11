@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bandit\Helper\TextHelper.cs" />
     <EmbeddedResource Include="ForceForm.resx">
       <DependentUpon>ForceForm.cs</DependentUpon>
     </EmbeddedResource>
