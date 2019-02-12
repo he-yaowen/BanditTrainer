@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bandit\Helper\ProcessMemoryHelper.cs" />
+    <Compile Include="Bandit\Hero.cs" />
     <Compile Include="ForceForm.cs">
       <SubType>Form</SubType>
     </Compile>
