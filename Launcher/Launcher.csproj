@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bandit\Force.cs" />
     <Compile Include="Bandit\Helper\ProcessMemoryHelper.cs" />
     <Compile Include="Bandit\Hero.cs" />
     <Compile Include="Bandit\Prefecture.cs" />
