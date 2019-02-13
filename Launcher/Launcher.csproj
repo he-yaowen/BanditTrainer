@@ -69,6 +69,8 @@
     <Compile Include="Bandit\Helper\ProcessMemoryHelper.cs" />
     <Compile Include="Bandit\Hero.cs" />
     <Compile Include="Bandit\Prefecture.cs" />
+    <Compile Include="Bandit\Runtime\GameProcess.cs" />
+    <Compile Include="Bandit\Runtime\GameProcess_Win32_zhTW.cs" />
     <Compile Include="ForceForm.cs">
       <SubType>Form</SubType>
     </Compile>
