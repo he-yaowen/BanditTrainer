@@ -34,10 +34,13 @@
         public int DexterityExp;
         public int WisdomExp;
         public int Loyalty;
+        public int Hire;
         public int Popularity;
         public int Men;
         public bool IsDebuted;
         public bool HasBoat;
         public HeroPosition Position;
+        public int FaceId;
+        public int LineMode;
     }
 }
