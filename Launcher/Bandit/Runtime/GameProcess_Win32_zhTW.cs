@@ -18,9 +18,33 @@ namespace Bandit.Runtime
         private const int PrefectureInfoAddress = 0x494218;
         private const int PrefectureInfoLength = 0x1A; // 26 bytes
 
+        private const int ForceMasterAddress = 0x4910CF;
+        private const int ForceMasterLength = 0x0C; // 12 bytes
+
+        private const int ForceExileAddress = 0x4910DC;
+        private const int ForceExileLength = 0x30; // 48 bytes
+
         protected override void LoadForces(Process process)
         {
-            throw new NotImplementedException();
+            Forces.Clear();
+
+            IntPtr hProcess = ProcessMemoryHelper.OpenProcess(ProcessMemoryHelper.PROCESS_VM_READ, false, process.Id);
+
+            byte[] masterBuffer = new byte[ForceMasterLength];
+            ProcessMemoryHelper.ReadProcessMemory(hProcess, (IntPtr)ForceMasterAddress, masterBuffer, ForceMasterLength, IntPtr.Zero);
+
+            byte[] exileBuffer = new byte[ForceExileLength];
+            ProcessMemoryHelper.ReadProcessMemory(hProcess, (IntPtr)ForceExileAddress, exileBuffer, ForceExileLength, IntPtr.Zero);
+
+            for (int i = 0; i < Force.MaxCount; i++) {
+                Force force = new Force();
+
+                force.Id = i;
+                force.MasterId = masterBuffer[i];
+                force.IsExiling = exileBuffer[i * 4] == 1 ? true : false;
+
+                Forces.Add(force);
+            }
         }
 
         protected override void LoadHeroes(Process process)
