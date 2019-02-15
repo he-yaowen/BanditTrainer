@@ -44,6 +44,7 @@
             this.lvwProcessList.TabIndex = 0;
             this.lvwProcessList.UseCompatibleStateImageBehavior = false;
             this.lvwProcessList.View = System.Windows.Forms.View.List;
+            this.lvwProcessList.DoubleClick += new System.EventHandler(this.action_SelectProcess);
             // 
             // btnRefresh
             // 
@@ -53,6 +54,7 @@
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "刷新(&R)";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.action_RefreshProcessList);
             // 
             // btnSelect
             // 
@@ -62,6 +64,7 @@
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "选择(&S)";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.action_SelectProcess);
             // 
             // btnCancel
             // 
@@ -71,6 +74,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "取消(&C)";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.action_CloseWindow);
             // 
             // ProcessForm
             // 

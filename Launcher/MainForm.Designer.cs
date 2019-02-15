@@ -30,20 +30,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.編輯EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.選項OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.幫助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打開遊戲進程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGameOpenProcess = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGameExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.編輯EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.勢力FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.英雄HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.州府PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.選項OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設置SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.幫助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssStatusStrip = new System.Windows.Forms.StatusStrip();
             this.lvwItemList = new System.Windows.Forms.ListView();
+            this.tsslProcessId = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslProcessName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.ssStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,12 +65,33 @@
             // processToolStripMenuItem
             // 
             this.processToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.打開遊戲進程ToolStripMenuItem,
+            this.tsmiGameOpenProcess,
             this.toolStripMenuItem1,
-            this.退出ToolStripMenuItem});
+            this.tsmiGameExit});
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
             this.processToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.processToolStripMenuItem.Text = "游戏(&G)";
+            // 
+            // tsmiGameOpenProcess
+            // 
+            this.tsmiGameOpenProcess.Name = "tsmiGameOpenProcess";
+            this.tsmiGameOpenProcess.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.tsmiGameOpenProcess.Size = new System.Drawing.Size(174, 22);
+            this.tsmiGameOpenProcess.Text = "打开进程...";
+            this.tsmiGameOpenProcess.Click += new System.EventHandler(this.action_OpenProcess);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
+            // 
+            // tsmiGameExit
+            // 
+            this.tsmiGameExit.Name = "tsmiGameExit";
+            this.tsmiGameExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.tsmiGameExit.Size = new System.Drawing.Size(174, 22);
+            this.tsmiGameExit.Text = "退出";
+            this.tsmiGameExit.Click += new System.EventHandler(this.action_Exit);
             // 
             // 編輯EToolStripMenuItem
             // 
@@ -79,6 +103,27 @@
             this.編輯EToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.編輯EToolStripMenuItem.Text = "编辑(&E)";
             // 
+            // 勢力FToolStripMenuItem
+            // 
+            this.勢力FToolStripMenuItem.Name = "勢力FToolStripMenuItem";
+            this.勢力FToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.勢力FToolStripMenuItem.Text = "势力(&F)";
+            this.勢力FToolStripMenuItem.Click += new System.EventHandler(this.action_ListForces);
+            // 
+            // 英雄HToolStripMenuItem
+            // 
+            this.英雄HToolStripMenuItem.Name = "英雄HToolStripMenuItem";
+            this.英雄HToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.英雄HToolStripMenuItem.Text = "英雄(&H)";
+            this.英雄HToolStripMenuItem.Click += new System.EventHandler(this.action_ListHeroes);
+            // 
+            // 州府PToolStripMenuItem
+            // 
+            this.州府PToolStripMenuItem.Name = "州府PToolStripMenuItem";
+            this.州府PToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.州府PToolStripMenuItem.Text = "州府(&P)";
+            this.州府PToolStripMenuItem.Click += new System.EventHandler(this.action_ListPrefectures);
+            // 
             // 選項OToolStripMenuItem
             // 
             this.選項OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,6 +131,12 @@
             this.選項OToolStripMenuItem.Name = "選項OToolStripMenuItem";
             this.選項OToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.選項OToolStripMenuItem.Text = "工具(&T)";
+            // 
+            // 設置SToolStripMenuItem
+            // 
+            this.設置SToolStripMenuItem.Name = "設置SToolStripMenuItem";
+            this.設置SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.設置SToolStripMenuItem.Text = "设置(&S)";
             // 
             // 幫助HToolStripMenuItem
             // 
@@ -95,49 +146,6 @@
             this.幫助HToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.幫助HToolStripMenuItem.Text = "帮助(&H)";
             // 
-            // 打開遊戲進程ToolStripMenuItem
-            // 
-            this.打開遊戲進程ToolStripMenuItem.Name = "打開遊戲進程ToolStripMenuItem";
-            this.打開遊戲進程ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.打開遊戲進程ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.打開遊戲進程ToolStripMenuItem.Text = "打开进程...";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
-            // 
-            // 退出ToolStripMenuItem
-            // 
-            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.退出ToolStripMenuItem.Text = "退出";
-            // 
-            // 勢力FToolStripMenuItem
-            // 
-            this.勢力FToolStripMenuItem.Name = "勢力FToolStripMenuItem";
-            this.勢力FToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.勢力FToolStripMenuItem.Text = "势力(&F)";
-            // 
-            // 英雄HToolStripMenuItem
-            // 
-            this.英雄HToolStripMenuItem.Name = "英雄HToolStripMenuItem";
-            this.英雄HToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.英雄HToolStripMenuItem.Text = "英雄(&H)";
-            // 
-            // 州府PToolStripMenuItem
-            // 
-            this.州府PToolStripMenuItem.Name = "州府PToolStripMenuItem";
-            this.州府PToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.州府PToolStripMenuItem.Text = "州府(&P)";
-            // 
-            // 設置SToolStripMenuItem
-            // 
-            this.設置SToolStripMenuItem.Name = "設置SToolStripMenuItem";
-            this.設置SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.設置SToolStripMenuItem.Text = "设置(&S)";
-            // 
             // 關於AToolStripMenuItem
             // 
             this.關於AToolStripMenuItem.Name = "關於AToolStripMenuItem";
@@ -146,6 +154,9 @@
             // 
             // ssStatusStrip
             // 
+            this.ssStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslProcessId,
+            this.tsslProcessName});
             this.ssStatusStrip.Location = new System.Drawing.Point(0, 651);
             this.ssStatusStrip.Name = "ssStatusStrip";
             this.ssStatusStrip.Size = new System.Drawing.Size(1060, 22);
@@ -165,6 +176,18 @@
             this.lvwItemList.UseCompatibleStateImageBehavior = false;
             this.lvwItemList.View = System.Windows.Forms.View.Details;
             // 
+            // tsslProcessId
+            // 
+            this.tsslProcessId.Name = "tsslProcessId";
+            this.tsslProcessId.Size = new System.Drawing.Size(118, 17);
+            this.tsslProcessId.Text = "toolStripStatusLabel1";
+            // 
+            // tsslProcessName
+            // 
+            this.tsslProcessName.Name = "tsslProcessName";
+            this.tsslProcessName.Size = new System.Drawing.Size(118, 17);
+            this.tsslProcessName.Text = "toolStripStatusLabel1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +203,8 @@
             this.Text = "水浒传天命之誓编辑器";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.ssStatusStrip.ResumeLayout(false);
+            this.ssStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,9 +217,9 @@
         private System.Windows.Forms.ToolStripMenuItem 編輯EToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 選項OToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 幫助HToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打開遊戲進程ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGameOpenProcess;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGameExit;
         private System.Windows.Forms.ToolStripMenuItem 勢力FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 英雄HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 州府PToolStripMenuItem;
@@ -202,6 +227,8 @@
         private System.Windows.Forms.ToolStripMenuItem 關於AToolStripMenuItem;
         private System.Windows.Forms.StatusStrip ssStatusStrip;
         private System.Windows.Forms.ListView lvwItemList;
+        private System.Windows.Forms.ToolStripStatusLabel tsslProcessId;
+        private System.Windows.Forms.ToolStripStatusLabel tsslProcessName;
     }
 }
 
