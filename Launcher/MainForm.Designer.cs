@@ -42,9 +42,9 @@
             this.幫助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.lvwItemList = new System.Windows.Forms.ListView();
             this.tsslProcessId = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslProcessName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lvwItemList = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.ssStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -106,21 +106,21 @@
             // 勢力FToolStripMenuItem
             // 
             this.勢力FToolStripMenuItem.Name = "勢力FToolStripMenuItem";
-            this.勢力FToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.勢力FToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.勢力FToolStripMenuItem.Text = "势力(&F)";
             this.勢力FToolStripMenuItem.Click += new System.EventHandler(this.action_ListForces);
             // 
             // 英雄HToolStripMenuItem
             // 
             this.英雄HToolStripMenuItem.Name = "英雄HToolStripMenuItem";
-            this.英雄HToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.英雄HToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.英雄HToolStripMenuItem.Text = "英雄(&H)";
             this.英雄HToolStripMenuItem.Click += new System.EventHandler(this.action_ListHeroes);
             // 
             // 州府PToolStripMenuItem
             // 
             this.州府PToolStripMenuItem.Name = "州府PToolStripMenuItem";
-            this.州府PToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.州府PToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.州府PToolStripMenuItem.Text = "州府(&P)";
             this.州府PToolStripMenuItem.Click += new System.EventHandler(this.action_ListPrefectures);
             // 
@@ -135,7 +135,7 @@
             // 設置SToolStripMenuItem
             // 
             this.設置SToolStripMenuItem.Name = "設置SToolStripMenuItem";
-            this.設置SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.設置SToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.設置SToolStripMenuItem.Text = "设置(&S)";
             // 
             // 幫助HToolStripMenuItem
@@ -149,7 +149,7 @@
             // 關於AToolStripMenuItem
             // 
             this.關於AToolStripMenuItem.Name = "關於AToolStripMenuItem";
-            this.關於AToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.關於AToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.關於AToolStripMenuItem.Text = "关于(&A)...";
             // 
             // ssStatusStrip
@@ -163,6 +163,18 @@
             this.ssStatusStrip.TabIndex = 1;
             this.ssStatusStrip.Text = "statusStrip1";
             // 
+            // tsslProcessId
+            // 
+            this.tsslProcessId.Name = "tsslProcessId";
+            this.tsslProcessId.Size = new System.Drawing.Size(118, 17);
+            this.tsslProcessId.Text = "toolStripStatusLabel1";
+            // 
+            // tsslProcessName
+            // 
+            this.tsslProcessName.Name = "tsslProcessName";
+            this.tsslProcessName.Size = new System.Drawing.Size(118, 17);
+            this.tsslProcessName.Text = "toolStripStatusLabel1";
+            // 
             // lvwItemList
             // 
             this.lvwItemList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -175,19 +187,7 @@
             this.lvwItemList.TabIndex = 2;
             this.lvwItemList.UseCompatibleStateImageBehavior = false;
             this.lvwItemList.View = System.Windows.Forms.View.Details;
-            this.lvwItemList.DoubleClick += new System.EventHandler(this.action_ShowHeroForm);
-            // 
-            // tsslProcessId
-            // 
-            this.tsslProcessId.Name = "tsslProcessId";
-            this.tsslProcessId.Size = new System.Drawing.Size(118, 17);
-            this.tsslProcessId.Text = "toolStripStatusLabel1";
-            // 
-            // tsslProcessName
-            // 
-            this.tsslProcessName.Name = "tsslProcessName";
-            this.tsslProcessName.Size = new System.Drawing.Size(118, 17);
-            this.tsslProcessName.Text = "toolStripStatusLabel1";
+            this.lvwItemList.DoubleClick += new System.EventHandler(this.lvwItemList_DoubleClick);
             // 
             // MainForm
             // 

@@ -15,12 +15,16 @@ namespace Launcher
 {
     public partial class MainForm : Form
     {
+        enum ItemListType { Unknown, Force, Hero, Prefecture };
+
         public GameProcess GameProcess;
 
         public ProcessForm ProcessForm;
         public ForceForm ForceForm;
         public HeroForm HeroForm;
         public PrefectureForm PrefectureForm;
+
+        private ItemListType itemListType = ItemListType.Unknown;
 
         public MainForm()
         {
@@ -191,6 +195,8 @@ namespace Launcher
 
         private void action_ListForces(object sender, EventArgs e)
         {
+            itemListType = ItemListType.Force;
+
             lvwItemList.Items.Clear();
             string[] columns = { "ID", "首领", "逃亡中" };
 
@@ -203,6 +209,8 @@ namespace Launcher
 
         private void action_ListHeroes(object sender, EventArgs e)
         {
+            itemListType = ItemListType.Hero;
+
             lvwItemList.Items.Clear();
             string[] columns = { "ID", "姓名", "諢名", "性別", "舵手", "登場年", "身份", "年齡",
                 "所屬", "所在", "體力", "體力上限", "忠義", "仁愛", "勇氣", "腕力", "技量", "智力",
@@ -217,6 +225,8 @@ namespace Launcher
 
         private void action_ListPrefectures(object sender, EventArgs e)
         {
+            itemListType = ItemListType.Prefecture;
+
             lvwItemList.Items.Clear();
 
             string[] columns = {"ID", "名稱", "勢力", "首領", "城數", "武器店", "造船廠", "金錢",
@@ -230,10 +240,22 @@ namespace Launcher
             }
         }
 
-        private void action_ShowHeroForm(object sender, EventArgs e)
+        private void lvwItemList_DoubleClick(object sender, EventArgs e)
         {
-            HeroForm.SetHero(GameProcess.Heroes[lvwItemList.SelectedItems[0].Index]);
-            HeroForm.ShowDialog();
+            switch (itemListType) {
+                case ItemListType.Force:
+                    ForceForm.SetForce(GameProcess.Forces[lvwItemList.SelectedItems[0].Index]);
+                    ForceForm.ShowDialog();
+                    break;
+                case ItemListType.Hero:
+                    HeroForm.SetHero(GameProcess.Heroes[lvwItemList.SelectedItems[0].Index]);
+                    HeroForm.ShowDialog();
+                    break;
+                case ItemListType.Prefecture:
+                    PrefectureForm.SetPrefecture(GameProcess.Prefectures[lvwItemList.SelectedItems[0].Index]);
+                    PrefectureForm.ShowDialog();
+                    break;
+            }
         }
     }
 }
