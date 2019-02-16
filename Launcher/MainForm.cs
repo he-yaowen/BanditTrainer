@@ -58,6 +58,28 @@ namespace Launcher
             }
         }
 
+        public void UpdateForceItem(ListViewItem item, Force force)
+        {
+            item.SubItems.Clear();
+            item.Text = force.Id.ToString();
+
+            Hero master = GameProcess.GetForceMaster(force);
+
+            if (master == null) {
+                item.SubItems.Add("");
+            } else {
+                item.SubItems.Add(master.Name);
+            }
+
+            item.SubItems.Add(force.IsExiling.ToString());
+        }
+
+        public void InsertForceItem(Force force)
+        {
+            ListViewItem item = lvwItemList.Items.Add("");
+            UpdateForceItem(item, force);
+        }
+
         public void UpdateHeroItem(ListViewItem item, Hero hero)
         {
             item.SubItems.Clear();
@@ -102,6 +124,60 @@ namespace Launcher
             UpdateHeroItem(item, hero);
         }
 
+        public void UpdatePrefectureItem(ListViewItem item, Prefecture prefecture)
+        {
+            Hero ruler;
+            List<Hero> heroes;
+            List<Hero> people;
+            int men = 0;
+
+
+            item.SubItems.Clear();
+            item.Text = (prefecture.Id + 1).ToString();
+            item.SubItems.Add(prefecture.Name);
+            ruler = GameProcess.GetPrefectureRuler(prefecture);
+
+            if (ruler == null) {
+                item.SubItems.Add("");
+                item.SubItems.Add("");
+            } else {
+                item.SubItems.Add(GameProcess.GetHeroMaster(ruler).Name);
+                item.SubItems.Add(ruler.Name);
+            }
+
+            item.SubItems.Add(prefecture.Castles.ToString());
+            item.SubItems.Add(prefecture.HasSmithy.ToString());
+            item.SubItems.Add(prefecture.HasShipyard.ToString());
+            item.SubItems.Add(prefecture.Gold.ToString());
+            item.SubItems.Add(prefecture.Food.ToString());
+            item.SubItems.Add(prefecture.Metal.ToString());
+            item.SubItems.Add(prefecture.Fur.ToString());
+            item.SubItems.Add(prefecture.Rate.ToString());
+            item.SubItems.Add(prefecture.Support.ToString());
+            item.SubItems.Add(prefecture.Flood.ToString());
+            item.SubItems.Add(prefecture.Land.ToString());
+            item.SubItems.Add(prefecture.Wealth.ToString());
+
+            heroes = GameProcess.GetPrefectureHeroes(prefecture, true);
+            people = GameProcess.GetPrefectureHeroes(prefecture, false);
+            item.SubItems.Add(heroes.Count.ToString());
+            item.SubItems.Add(people.Count.ToString());
+
+            foreach (Hero hero in heroes) {
+                men += hero.Men;
+            }
+
+            item.SubItems.Add(men.ToString());
+            item.SubItems.Add(prefecture.Arm.ToString());
+            item.SubItems.Add(prefecture.Skill.ToString());
+        }
+
+        public void InsertPrefectureItem(Prefecture prefecture)
+        {
+            ListViewItem item = lvwItemList.Items.Add("");
+            UpdatePrefectureItem(item, prefecture);
+        }
+
         private void action_OpenProcess(object sender, EventArgs e)
         {
             ProcessForm.action_RefreshProcessList(sender, e);
@@ -115,6 +191,14 @@ namespace Launcher
 
         private void action_ListForces(object sender, EventArgs e)
         {
+            lvwItemList.Items.Clear();
+            string[] columns = { "ID", "首领", "逃亡中" };
+
+            SetItemListColumns(columns);
+
+            foreach (Force force in GameProcess.Forces) {
+                InsertForceItem(force);
+            }
         }
 
         private void action_ListHeroes(object sender, EventArgs e)
@@ -133,6 +217,17 @@ namespace Launcher
 
         private void action_ListPrefectures(object sender, EventArgs e)
         {
+            lvwItemList.Items.Clear();
+
+            string[] columns = {"ID", "名稱", "勢力", "首領", "城數", "武器店", "造船廠", "金錢",
+                "糧食", "鐵", "毛皮", "物價", "共鳴度", "治水", "開墾", "開發", "英雄", "在野",
+                "士兵", "武裝度", "訓練度"};
+
+            SetItemListColumns(columns);
+
+            foreach (Prefecture prefecture in GameProcess.Prefectures) {
+                InsertPrefectureItem(prefecture);
+            }
         }
     }
 }
