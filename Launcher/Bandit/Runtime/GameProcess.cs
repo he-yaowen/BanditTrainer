@@ -27,5 +27,14 @@ namespace Bandit.Runtime
             LoadHeroes(process);
             LoadPrefectures(process);
         }
+
+        public Hero GetHeroMaster(Hero hero)
+        {
+            if (hero.Position < HeroPosition.死亡) {
+                return Heroes[hero.MasterId];
+            } else {
+                return null;
+            }
+        }
     }
 }
