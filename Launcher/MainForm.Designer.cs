@@ -175,6 +175,7 @@
             this.lvwItemList.TabIndex = 2;
             this.lvwItemList.UseCompatibleStateImageBehavior = false;
             this.lvwItemList.View = System.Windows.Forms.View.Details;
+            this.lvwItemList.DoubleClick += new System.EventHandler(this.action_ShowHeroForm);
             // 
             // tsslProcessId
             // 

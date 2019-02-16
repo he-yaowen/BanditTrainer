@@ -229,5 +229,11 @@ namespace Launcher
                 InsertPrefectureItem(prefecture);
             }
         }
+
+        private void action_ShowHeroForm(object sender, EventArgs e)
+        {
+            HeroForm.SetHero(GameProcess.Heroes[lvwItemList.SelectedItems[0].Index]);
+            HeroForm.ShowDialog();
+        }
     }
 }

@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxHero = new System.Windows.Forms.GroupBox();
             this.cbxHasBoat = new System.Windows.Forms.ComboBox();
             this.cbxSteersman = new System.Windows.Forms.ComboBox();
             this.cbxIsDebuted = new System.Windows.Forms.ComboBox();
@@ -77,63 +77,63 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gbxHero.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbxHero
             // 
-            this.groupBox1.Controls.Add(this.cbxHasBoat);
-            this.groupBox1.Controls.Add(this.cbxSteersman);
-            this.groupBox1.Controls.Add(this.cbxIsDebuted);
-            this.groupBox1.Controls.Add(this.cbxPosition);
-            this.groupBox1.Controls.Add(this.cbxPrefecture);
-            this.groupBox1.Controls.Add(this.txtStrength);
-            this.groupBox1.Controls.Add(this.txtStrengthExp);
-            this.groupBox1.Controls.Add(this.txtDexterity);
-            this.groupBox1.Controls.Add(this.txtDexterityExp);
-            this.groupBox1.Controls.Add(this.txtWisdom);
-            this.groupBox1.Controls.Add(this.txtWisdomExp);
-            this.groupBox1.Controls.Add(this.txtLoyalty);
-            this.groupBox1.Controls.Add(this.txtPopularity);
-            this.groupBox1.Controls.Add(this.txtMen);
-            this.groupBox1.Controls.Add(this.txtIntegrity);
-            this.groupBox1.Controls.Add(this.txtStamina);
-            this.groupBox1.Controls.Add(this.txtStaminaMax);
-            this.groupBox1.Controls.Add(this.txtMercy);
-            this.groupBox1.Controls.Add(this.txtCourage);
-            this.groupBox1.Controls.Add(this.txtAge);
-            this.groupBox1.Controls.Add(this.cbxForce);
-            this.groupBox1.Controls.Add(this.txtDebutYear);
-            this.groupBox1.Controls.Add(this.cbxGender);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtNickname);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(671, 354);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "编号: 1";
+            this.gbxHero.Controls.Add(this.cbxHasBoat);
+            this.gbxHero.Controls.Add(this.cbxSteersman);
+            this.gbxHero.Controls.Add(this.cbxIsDebuted);
+            this.gbxHero.Controls.Add(this.cbxPosition);
+            this.gbxHero.Controls.Add(this.cbxPrefecture);
+            this.gbxHero.Controls.Add(this.txtStrength);
+            this.gbxHero.Controls.Add(this.txtStrengthExp);
+            this.gbxHero.Controls.Add(this.txtDexterity);
+            this.gbxHero.Controls.Add(this.txtDexterityExp);
+            this.gbxHero.Controls.Add(this.txtWisdom);
+            this.gbxHero.Controls.Add(this.txtWisdomExp);
+            this.gbxHero.Controls.Add(this.txtLoyalty);
+            this.gbxHero.Controls.Add(this.txtPopularity);
+            this.gbxHero.Controls.Add(this.txtMen);
+            this.gbxHero.Controls.Add(this.txtIntegrity);
+            this.gbxHero.Controls.Add(this.txtStamina);
+            this.gbxHero.Controls.Add(this.txtStaminaMax);
+            this.gbxHero.Controls.Add(this.txtMercy);
+            this.gbxHero.Controls.Add(this.txtCourage);
+            this.gbxHero.Controls.Add(this.txtAge);
+            this.gbxHero.Controls.Add(this.cbxForce);
+            this.gbxHero.Controls.Add(this.txtDebutYear);
+            this.gbxHero.Controls.Add(this.cbxGender);
+            this.gbxHero.Controls.Add(this.label13);
+            this.gbxHero.Controls.Add(this.label12);
+            this.gbxHero.Controls.Add(this.label10);
+            this.gbxHero.Controls.Add(this.txtNickname);
+            this.gbxHero.Controls.Add(this.txtName);
+            this.gbxHero.Controls.Add(this.label27);
+            this.gbxHero.Controls.Add(this.label26);
+            this.gbxHero.Controls.Add(this.label25);
+            this.gbxHero.Controls.Add(this.label24);
+            this.gbxHero.Controls.Add(this.label23);
+            this.gbxHero.Controls.Add(this.label22);
+            this.gbxHero.Controls.Add(this.label21);
+            this.gbxHero.Controls.Add(this.label20);
+            this.gbxHero.Controls.Add(this.label19);
+            this.gbxHero.Controls.Add(this.label11);
+            this.gbxHero.Controls.Add(this.label8);
+            this.gbxHero.Controls.Add(this.label7);
+            this.gbxHero.Controls.Add(this.label6);
+            this.gbxHero.Controls.Add(this.label5);
+            this.gbxHero.Controls.Add(this.label4);
+            this.gbxHero.Controls.Add(this.label3);
+            this.gbxHero.Controls.Add(this.label2);
+            this.gbxHero.Controls.Add(this.label1);
+            this.gbxHero.Location = new System.Drawing.Point(12, 12);
+            this.gbxHero.Name = "gbxHero";
+            this.gbxHero.Size = new System.Drawing.Size(671, 354);
+            this.gbxHero.TabIndex = 0;
+            this.gbxHero.TabStop = false;
+            this.gbxHero.Text = "编号: 1";
             // 
             // cbxHasBoat
             // 
@@ -580,7 +580,7 @@
             this.ClientSize = new System.Drawing.Size(693, 409);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxHero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -589,15 +589,15 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "编辑英雄";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxHero.ResumeLayout(false);
+            this.gbxHero.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxHero;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
