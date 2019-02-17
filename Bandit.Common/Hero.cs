@@ -1,4 +1,10 @@
-﻿namespace Bandit
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bandit.Common
 {
     public enum HeroGender { 女 = 0, 男 };
 
@@ -43,4 +49,5 @@
         public int FaceId;
         public int LineMode;
     }
+
 }

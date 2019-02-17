@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bandit;
+using Bandit.Common;
 
-namespace Launcher
+namespace BanditTrainer.Launcher
 {
     public partial class ForceForm : Form
     {

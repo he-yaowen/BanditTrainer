@@ -1,4 +1,4 @@
-﻿namespace Launcher
+﻿namespace BanditTrainer.Launcher
 {
     partial class PrefectureForm
     {

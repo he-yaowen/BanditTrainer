@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
-using Bandit;
-using Bandit.Runtime;
+using Bandit.Common;
+using Bandit.Common.Runtime;
 
-namespace Launcher
+namespace BanditTrainer.Launcher
 {
     public partial class MainForm : Form
     {

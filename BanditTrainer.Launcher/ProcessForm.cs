@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Launcher
+namespace BanditTrainer.Launcher
 {
     public partial class ProcessForm : Form
     {

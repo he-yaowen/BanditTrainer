@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using Bandit.Helper;
+using Bandit.Common.Helper;
 
-namespace Bandit.Runtime
+namespace Bandit.Common.Runtime
 {
     public class GameProcess_Win32_zhTW : GameProcess
     {

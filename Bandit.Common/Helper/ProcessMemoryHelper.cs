@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Bandit.Helper
+namespace Bandit.Common.Helper
 {
     public abstract class ProcessMemoryHelper
     {

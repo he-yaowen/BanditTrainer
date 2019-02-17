@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Bandit;
 
-namespace Bandit.Runtime
+namespace Bandit.Common.Runtime
 {
     public abstract class GameProcess
     {

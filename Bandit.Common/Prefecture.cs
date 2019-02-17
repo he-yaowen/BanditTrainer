@@ -1,4 +1,4 @@
-﻿namespace Bandit
+﻿namespace Bandit.Common
 {
     public enum BeastType { 虎, 狼, 熊, 豹 };
 

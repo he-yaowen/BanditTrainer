@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bandit.Helper
+namespace Bandit.Common.Helper
 {
     public class TextHelper
     {

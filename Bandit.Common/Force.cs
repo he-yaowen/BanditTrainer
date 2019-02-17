@@ -1,4 +1,4 @@
-﻿namespace Bandit
+﻿namespace Bandit.Common
 {
     public class Force
     {
